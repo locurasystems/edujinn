@@ -54,4 +54,16 @@ class PageController extends ControllerAdmin
 			return $this->response->redirect('index/notFound');
 		}
 	}
+	public function QuotaLimitAction()
+	{
+
+	}
+	public function SaveQuotaLimitAction()
+	{
+
+	}
+	public function PageAction()
+	{
+
+	}
 }
