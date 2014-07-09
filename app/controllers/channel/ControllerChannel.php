@@ -2,13 +2,18 @@
 namespace Learn\Controllers\channel;
 use Phalcon\Mvc\Controller;
 use Phalcon\Mvc\View;
+use \Phalcon\Exception;
 class ControllerChannel extends Controller
 {
 	public function beforeExecuteRoute()
 	{
+
 		if(!$this->auth->getIdentity())
 		{
-			return $this->response->redirect('session/signin');
+            // throw new Exception('The user does not exist');
+			$this->response->redirect('session/signin');
+            return false;
+
 		}
 		if($this->auth->getGroup() != 'channel')
 		{
@@ -19,7 +24,7 @@ class ControllerChannel extends Controller
 	}
 	public function afterExecuteRoute()
     {
-        $this->view->setViewsDir($this->view->getVIewsDir() . 'channel/');
+        $this->view->setViewsDir($this->view->getViewsDir() . 'channel/');
         /*
         check post through csrf security or not
         */

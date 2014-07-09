@@ -9,10 +9,10 @@ use Learn\Models\Slug;
 use Learn\Auth\Exception as AuthException;
 class UserController extends ControllerChannel
 {
-	public function beforeExecuteRoute()
-	{
-		$this->view->setLayout('index');
-	}
+	 public function initialize()
+    {
+    $this->view->setLayout('index');
+    }
 	public function createAction()
 	{
 		try{
