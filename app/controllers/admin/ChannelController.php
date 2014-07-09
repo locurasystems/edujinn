@@ -139,17 +139,13 @@ class ChannelController extends ControllerAdmin
 					return $this->response->redirect($_SERVER['HTTP_REFERER']);
 		}
 	}
-	public function testAction()
+	public function quotaLimitAction()
 	{
-		if($this->request->isPost())
-		{
-			echo "hello";
-			$this->view->disable();
-		}
-		else
-		{
-			echo "not hello";
-			$this->view->disable();
-		}
+
 	}
+	public function saveQuotaLimitAction()
+	{
+
+	}
+	
 }

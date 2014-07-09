@@ -11,8 +11,8 @@
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
-	<?php echo $this->tag->javascriptInclude('public/js/ng-module/ng-channel.js'); ?>
-	<?php echo $this->tag->javascriptInclude('public/js/ng-ctrl/traineerCtrl.js'); ?>
+	<?php echo $this->tag->javascriptInclude('public/js/channel/ng-app/ng-channel.js'); ?>
+	<?php echo $this->tag->javascriptInclude('public/js/channel/ng-ctrl/traineerCtrl.js'); ?>
 	<?php echo $this->tag->javascriptInclude('public/js/ui-bootstrap.js'); ?>
 
 	</head>
