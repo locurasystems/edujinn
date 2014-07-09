@@ -1,4 +1,4 @@
-channelApp.controller('traineerController',function($scope,$http,HTTP,$rootScope,$window))
+channelApp.controller('traineerController',function($scope,$http,HTTP,$rootScope,$window)
 {
 	$scope.traineer=[];
 	$scope.start;
@@ -23,4 +23,4 @@ channelApp.controller('traineerController',function($scope,$http,HTTP,$rootScope
 		$scope.bigTotalItems=100;
 		$scope.bigCurrentPage=1;
 	};
-}
+})

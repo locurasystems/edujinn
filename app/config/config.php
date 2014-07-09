@@ -19,8 +19,8 @@ return new \Phalcon\Config(array(
         'libraryDir' => __DIR__ . '/../../app/library/',
         'cacheDir' => __DIR__ . '/../../app/cache/',
         'logDir' => __DIR__ . '/../../app/logs/',
-        'baseUri' => 'http://localhost/learn/',
-        'publicUrl' =>'http://localhost/learn',
+        'baseUri' => '/edujinn/',
+        'publicUrl' =>'http://localhost/edujinn',
         'cryptSalt' => 'eEAfR|_&G&f,+vU]:jFr!!A&+71w1Ms9~8_4L!<@[N@DyaIP_2My|:+.u>/6m,$D'
     ),
     'mail' => array(

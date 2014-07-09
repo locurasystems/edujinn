@@ -1,6 +1,6 @@
 'use strict';
 
-var baseURL='http://localhost/learn/channel/';
+var baseURL='http://localhost/edujinn/channel/';
 // Declare app level module which depends on filters, and services
 var channelApp=angular.module('channel',['ui.bootstrap']);
 

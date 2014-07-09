@@ -82,15 +82,27 @@ class UserController extends ControllerChannel
 		$this->view->setVar('total',$total);
 		if($this->request->isPost())
 		{
-			$user 			=	ChannelUser::find("channelId = '$channelId'");
+			$currentPage                =$this->request->getPost('currentPage','int',1);
+			$perPage                    =$this->request->getPost('perPage','int',3);
+			$offset                     = ($currentPage ==1 ? 0: ($currentPage-1)*$perPage);
+			$user 						=	ChannelUser::find(array(
+													"channelId = '$channelId'",
+													'limit'=>array(
+															'number'=>$perPage,
+															'offset'=>$offset
+															)
+														));
 			if($user)
 			{
 				$arrs=array();
 				foreach ($user as $value) {
 					$arr['user']=$value->user->toArray();
+					$arr['traineer']=$value->toArray();
 					array_push($arrs, $arr);
 				}
 				echo json_encode($arrs);
+				$this->view->disable();
+				return;
 			}
 			
 		}
