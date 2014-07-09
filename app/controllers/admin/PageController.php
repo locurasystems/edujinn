@@ -29,7 +29,7 @@ class PageController extends ControllerAdmin
 					}
 					else
 					{
-					$this->view->setVar('id','');
+						$this->view->setVar('id','');
 					}
 				}
 				else
@@ -38,8 +38,6 @@ class PageController extends ControllerAdmin
 				}
 			}
 		}
-
-		
 	}
 	public function PageByIdAction($id)
 	{
@@ -54,16 +52,13 @@ class PageController extends ControllerAdmin
 			return $this->response->redirect('index/notFound');
 		}
 	}
-	public function QuotaLimitAction()
+	public function pageAction()
 	{
 
 	}
-	public function SaveQuotaLimitAction()
+	public function updatePageAction()
 	{
 
 	}
-	public function PageAction()
-	{
-
-	}
+	
 }
