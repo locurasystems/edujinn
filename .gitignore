@@ -1,0 +1,8 @@
+.idea/workspace.xml
+app/cache/*
+app/config/config.php
+app/logs/*
+.settings/*
+.idea/*
+*.DS_Store
+*._*
