@@ -2,6 +2,30 @@
 
     $router = new \Phalcon\Mvc\Router;
 
+        $router->add('/{lg:[a-z]{2}}(/?)',
+        array(
+            "controller"=>'index',
+            'action'=>'index',
+            ));
+
+    $router->add('/{lg:[a-z]{2}}/:controller(/?)',
+        array(
+            "controller"=>2,
+            'action'=>'index',
+            ));
+    $router->add('/{lg:[a-z]{2}}/:controller/:action(/?)',
+        array(
+            "controller"=>2,
+            'action'=>3,
+            ));
+
+    $router->add('/{lg:[a-z]{2}}/:controller/:action/:param',
+        array(
+            "controller"=>2,
+            'action'=>3,
+            'param'=>4
+            ));
+
     $router->add('/signin',array(
         'controller'    =>  'Session',
         'action'        =>  'signin'
@@ -16,7 +40,7 @@
 
     $router->add('/school/{slug:[a-z0-9-]+}/:controller',array(
         'namespace'     =>  'Learn\Controllers\slug',
-        'controller'    =>  2,
+        'controller'    =>  3,
         'action'        =>  'index'
         ));
     $router->add('/school/{slug:[a-z0-9-]+}/:controller/:action',array(
@@ -33,65 +57,103 @@
   
     /*Routes for Admin*/
 
-    $router->add('/admin',array(
+    $router->add('/{lg:[a-z]{2}}/admin(/?)',array(
         'namespace' =>'Learn\Controllers\admin',
         'controller'=>'Index',
         'action'    =>'index'
         ));
-     $router->add('/admin/',array(
-        'namespace' =>'Learn\Controllers\admin',
-        'controller'=>'Index',
-        'action'    =>'index'
-        ));
-    $router->add('/admin/:controller/:action',array(
+    $router->add('/{lg:[a-z]{2}}/admin/:controller/:action(/?)',array(
         'namespace'=>'Learn\Controllers\admin',
-        'controller'=>1,
-        'action'    =>2
+        'controller'=>2,
+        'action'    =>3
         ));
-     $router->add('/admin/:controller/:action/:int',array(
+     $router->add('/{lg:[a-z]{2}}/admin/:controller/:action/:int',array(
         'namespace' =>'Learn\Controllers\admin',
-        'controller'=>1,
-        'action'    =>2,
-        'param'     =>3
+        'controller'=>2,
+        'action'    =>3,
+        'param'     =>4
         ));
-    $router->add('/admin/:controller/',array(
+    $router->add('/{lg:[a-z]{2}}/admin/:controller(/?)',array(
         'namespace' =>'Learn\Controllers\admin',
-        'controller'=>1,
+        'controller'=>2,
         'action'    =>'index'
         ));
     /*
      *Default Routes for Channel
     */
 
-    $router->add('/channel',array(
+    $router->add('/{lg:[a-z]{2}}/channel(/?)',array(
         'namespace' =>'Learn\Controllers\channel',
         'controller'=>'Index',
         'action'    =>'index'
         ));
-     $router->add('/channel/',array(
+    $router->add('/{lg:[a-z]{2}}/channel/:controller/:action(/?)',array(
         'namespace' =>'Learn\Controllers\channel',
+        'controller'=>2,
+        'action'    =>3
+        ));
+    $router->add('/{lg:[a-z]{2}}/channel/:controller/:action/:int',array(
+        'namespace' =>'Learn\Controllers\channel',
+        'controller'=>2,
+        'action'    =>3,
+        'id'     =>4
+        ));
+    $router->add('/{lg:[a-z]{2}}/channel/:controller(/?)',array(
+        'namespace' =>'Learn\Controllers\channel',
+        'controller'=>2,
+        'action'    =>'index'
+        ));
+    
+    /*
+     *Default Routes for Traineer
+    */
+
+    $router->add('/{lg:[a-z]{2}}/traineer(/?)',array(
+        'namespace' =>'Learn\Controllers\traineer',
         'controller'=>'Index',
         'action'    =>'index'
         ));
-    $router->add('/channel/:controller/:action',array(
-        'namespace' =>'Learn\Controllers\channel',
-        'controller'=>1,
-        'action'    =>2
+     
+    $router->add('/{lg:[a-z]{2}}/traineer/:controller/:action',array(
+        'namespace' =>'Learn\Controllers\traineer',
+        'controller'=>2,
+        'action'    =>3
         ));
-    $router->add('/channel/:controller/:action/:int',array(
-        'namespace' =>'Learn\Controllers\channel',
-        'controller'=>1,
-        'action'    =>2,
-        'id'     =>3
+    $router->add('/{lg:[a-z]{2}}/traineer/:controller/:action/:int',array(
+        'namespace' =>'Learn\Controllers\traineer',
+        'controller'=>2,
+        'action'    =>3,
+        'id'     =>4
         ));
-    $router->add('/channel/:controller/',array(
-        'namespace' =>'Learn\Controllers\channel',
-        'controller'=>1,
+    $router->add('/{lg:[a-z]{2}}/traineer/:controller(/?)',array(
+        'namespace' =>'Learn\Controllers\traineer',
+        'controller'=>2,
         'action'    =>'index'
         ));
-    $router->addPost('/admin/channel/test',array(
-    'namespace'  =>'Learn\Controllers\admin',
-    'controller' =>'channel',
-    'action'     =>'test'
-    ));
+     /*
+     *Default Routes for Student
+    */
+
+    $router->add('/{lg:[a-z]{2}}/student(/?)',array(
+        'namespace' =>'Learn\Controllers\student',
+        'controller'=>'Index',
+        'action'    =>'index'
+        ));
+    
+    $router->add('/{lg:[a-z]{2}}/student/:controller/:action(/?)',array(
+        'namespace' =>'Learn\Controllers\student',
+        'controller'=>2,
+        'action'    =>3
+        ));
+    $router->add('/{lg:[a-z]{2}}/student/:controller/:action/:int',array(
+        'namespace' =>'Learn\Controllers\student',
+        'controller'=>2,
+        'action'    =>3,
+        'id'     =>4
+        ));
+    $router->add('/{lg:[a-z]{2}}/student/:controller(/?)',array(
+        'namespace' =>'Learn\Controllers\student',
+        'controller'=>2,
+        'action'    =>'index'
+        ));
     return $router;

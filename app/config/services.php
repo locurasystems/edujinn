@@ -30,6 +30,12 @@ $di->set('url', function () use ($config) {
     return $url;
 }, true);
 
+$di->set('publicUrl',function() use ($config){
+    $pUrl=new UrlResolver();
+    $pUrl->setBaseUri($config->application->publicUrl);
+    return $pUrl;
+},true);
+
 /**
  * Setting up the view component
  */

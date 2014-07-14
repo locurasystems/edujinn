@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
-    <link href="<?php echo $this->url->get('public/css/bootstrap.min.css') ?>" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->url->get('public/css/custom.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->url->get('public/css/bootstrap-markdown.min.css') ?>">
+    <link href="<?php echo $this->publicUrl->get('css/bootstrap.min.css'); ?>" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->publicUrl->get('css/custom.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->publicUrl->get('css/bootstrap-markdown.min.css') ?>">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 	</head>

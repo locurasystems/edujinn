@@ -88,6 +88,14 @@ class SessionController extends ControllerBase
                     {
                        return $this->response->redirect('channel/index/index') ;
                     }
+                    elseif($this->auth->getGroup() == 'traineer')
+                    {
+                        return $this->response->redirect('traineer/index/index');
+                    }
+                    elseif($this->auth->getGroup() == 'student')
+                    {
+                        return $this->response->redirect('student/index/index');
+                    }
                 }
             }
         }

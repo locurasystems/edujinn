@@ -1,0 +1,50 @@
+<?php echo $this->tag->javascriptInclude('public/js/channel/ng-ctrl/courseCtrl.js'); ?>
+
+<style type="text/css">
+	.fadeout{
+		color:red;
+	}
+</style>
+
+<div class="col-md-9" ng-app="channel" ng-controller="courseController">
+<?php $this->flash->output(); ?>
+<div>
+	<alert ng-repeat="alerts in alert"  type="[[alerts.type]]" class="animated-show"  >[[alerts.msg]]</alert>
+</div>
+<input id="csrf" type="hidden" name="<?php echo $this->security->getTokenKey(); ?>" value="<?php echo $this->security->getToken() ?>">
+	<div id="no-more-tables"  ng-init='list()'>
+		<table class="table table-bordered cf">
+			<thead class="cf">
+				<tr>
+					<th>Sno</th>
+					<th>Title</th>
+					<th>Status</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat='c in course'>
+					<td data-title="Sno">[[c.id]]</td>
+					<td data-title='Title'>[[c.title]]</td>
+					<td data-title='Status'>[[c.isActive]]</td>
+					<td data-title='action'>
+						<div class="btn-group">
+							<button class="btn btn-primary btn-md dropdown-toggle" data-toggle="dropdown">
+								Action <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role='menu'>
+								<li><a href="#">Edit</a></li>
+								<li><a href="javascript:void(0);"  ng-click="delete(c.id)">Delete</a></li>
+								<li><a >Activate</a></li>
+								
+							</ul>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div  ng-init="paginate(dataLength);" class="pull-right">
+            <pagination total-items="<?php echo $total;?>" items-per-page="[[item_per_page]]" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+		</div>
+	</div>
+</div>

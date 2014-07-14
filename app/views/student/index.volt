@@ -10,20 +10,21 @@
     <link rel="stylesheet" type="text/css" href="<?php echo $this->url->get('public/css/bootstrap-markdown.min.css') ?>">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
-<?php echo $this->tag->javascriptInclude('public/js/admin/ng-app/ng-admin.js'); ?>
-<?php echo $this->tag->javascriptInclude('public/js/admin/ng-ctrl/channelCtrl.js'); ?>
-<?php echo $this->tag->javascriptInclude('public/js/ui-bootstrap.js'); ?>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+	<!-- // <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular-animate.js"></script> -->
+	<?php echo $this->tag->javascriptInclude('public/js/channel/ng-app/ng-channel.js'); ?>
+	<?php echo $this->tag->javascriptInclude('public/js/ui-bootstrap.js'); ?>
+
 
 	</head>
 	<body>
-		<?php echo $this->getContent(); ?>
-		<?php echo $this->tag->javascriptInclude('public/js/bootstrap.min.js'); ?>
-		<?php echo $this->tag->javascriptInclude('public/js/bootstrap-markdown.js'); ?>
-		<?php echo $this->tag->javascriptInclude('public/js/to-markdown.js'); ?>
-		<?php echo $this->tag->javascriptInclude('public/js/custom.js'); ?>
+		{{content()}}
+		{{javascript_include("public/js/bootstrap.min.js")}}
+		{{javascript_include("public/js/bootstrap-markdown.js")}}
+		{{javascript_include("public/js/to-markdown.js")}}
+		{{javascript_include("public/js/custom.js")}}
 		 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-		 <?php echo $this->tag->stylesheetLink('public/css/bootstrap-theme.min.css'); ?>
+		 {{stylesheet_link("public/css/bootstrap-theme.min.css")}}
 		<?php if(isset($script)){
 			echo $script;
 			} ?>

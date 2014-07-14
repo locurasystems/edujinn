@@ -18,13 +18,13 @@
 
 	</head>
 	<body>
-		<?php echo $this->getContent(); ?>
-		<?php echo $this->tag->javascriptInclude('public/js/bootstrap.min.js'); ?>
-		<?php echo $this->tag->javascriptInclude('public/js/bootstrap-markdown.js'); ?>
-		<?php echo $this->tag->javascriptInclude('public/js/to-markdown.js'); ?>
-		<?php echo $this->tag->javascriptInclude('public/js/custom.js'); ?>
+		{{content()}}
+		{{javascript_include("public/js/bootstrap.min.js")}}
+		{{javascript_include("public/js/bootstrap-markdown.js")}}
+		{{javascript_include("public/js/to-markdown.js")}}
+		{{javascript_include("public/js/custom.js")}}
 		 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-		 <?php echo $this->tag->stylesheetLink('public/css/bootstrap-theme.min.css'); ?>
+		 {{stylesheet_link("public/css/bootstrap-theme.min.css")}}
 		<?php if(isset($script)){
 			echo $script;
 			} ?>

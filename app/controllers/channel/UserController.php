@@ -7,7 +7,7 @@ use Learn\Models\Channel;
 use Learn\Models\ChannelUser;
 use Learn\Models\Slug;
 use Learn\Auth\Exception as AuthException;
-class UserController extends ControllerChannel
+class UserController extends ControllerBase
 {
 	public function initialize()
 	{
@@ -82,16 +82,16 @@ class UserController extends ControllerChannel
 		$this->view->setVar('total',$total);
 		if($this->request->isPost())
 		{
-			$currentPage                =$this->request->getPost('currentPage','int',1);
-			$perPage                    =$this->request->getPost('perPage','int',3);
-			$offset                     = ($currentPage ==1 ? 0: ($currentPage-1)*$perPage);
-			$user 						=	ChannelUser::find(array(
-													"channelId = '$channelId'",
-													'limit'=>array(
-															'number'=>$perPage,
-															'offset'=>$offset
-															)
-														));
+			$currentPage      =$this->request->getPost('currentPage','int',1);
+			$perPage          =$this->request->getPost('perPage','int',3);
+			$offset           = ($currentPage ==1 ? 0: ($currentPage-1)*$perPage);
+			$user 			  =	ChannelUser::find(array(
+									"channelId = '$channelId'",
+									'limit'=>array(
+									'number'=>$perPage,
+									'offset'=>$offset
+									)
+									));
 			if($user)
 			{
 				$arrs=array();

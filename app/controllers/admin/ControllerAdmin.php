@@ -15,6 +15,7 @@ class ControllerAdmin extends Controller
 		}
 		if($this->auth->getGroup()!='admin')
 		{
+                     
 			$profile=$this->auth->getGroup();
 			$this->flash->error('You don\'t have right to access admin');
 			return $this->response->redirect($profile);

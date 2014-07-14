@@ -1,0 +1,38 @@
+<div class="col-md-9">
+	<?php $this->flash->output(); ?>
+	<form class="form-horizontal" action="<?php echo $this->url->get('channel/course/create'); ?>" method="post">
+		<input type="hidden" name="channel_id" value="<?php echo $this->auth->getID(); ?>">
+		<input type="hidden" name="<?php echo $this->security->getTokenKey(); ?>" value="<?php echo $this->security->getToken(); ?>">
+		<div class="form-group">
+			<label class="col-sm-2 control-label" for="title">Title:</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" id="title" placeholder="Title" name="title" value="course1">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label" for="code">Code:</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" id="code" name="code" placeholder="Course Code" value="isbn123">
+			</div>	
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label" for="about">About:</label>
+			<div class="col-sm-6">
+				<textarea data-provide="markdown" class="form-control" id="about" name='about' placeholder="Text">helo</textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label" for="description">Description:</label>
+			<div class="col-sm-6">
+				<textarea class="form-control" data-provide="markdown" id="description" name='description' placeholder='Text'>world</textarea>
+			</div>
+		</div>	
+		<div class="form-group">
+			<label class="col-sm-2"></label>
+			<div class="col-sm-6">
+				<button type="submit" class="btn btn-block btn-info">Add</button>
+			</div>
+		</div>
+
+	</form>
+</div>

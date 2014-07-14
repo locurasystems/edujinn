@@ -1,5 +1,5 @@
-<?php 
-namespace Learn\Controllers\traineer;
+<?php  
+namespace Learn\Controllers\student;
 use \Phalcon\Mvc\Controller;
 class ControllerBase extends Controller
 {
@@ -9,7 +9,6 @@ class ControllerBase extends Controller
 	}
 	public function afterExecuteRoute()
     {
-        $this->view->setViewsDir($this->view->getViewsDir().'traineer/');
+        $this->view->setViewsDir($this->view->getViewsDir().'student/');
     }
-
 }

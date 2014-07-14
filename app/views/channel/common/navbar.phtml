@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">MindJINN</a>
+          <a class="navbar-brand" href="#">EduJINN</a>
         </div>
         <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
@@ -18,6 +18,20 @@
               <ul class="dropdown-menu" role="menu">
                 <li><a href="<?php echo $this->url->get('channel/user/create'); ?>" >AddUsers</a></li>
                 <li><a href="<?php echo $this->url->get('channel/user/view') ?>" >ViewUsers</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Student <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="<?php echo $this->url->get('channel/student/create'); ?>" >AddStudents</a></li>
+                <li><a href="<?php echo $this->url->get('channel/student/view') ?>" >ViewStudents</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="<?php echo $this->url->get('channel/course/create'); ?>">CreateCourse</a></li>
+                <li><a href="<?php echo $this->url->get('channel/course/view'); ?>">ViewCourse</a></li>
               </ul>
             </li>
            

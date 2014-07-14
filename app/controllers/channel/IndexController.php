@@ -1,7 +1,7 @@
 <?php 
 namespace Learn\Controllers\channel;
 use Learn\Controllers;
-class IndexController extends ControllerChannel
+class IndexController extends ControllerBase
 {
 	public function indexAction()
 	{
