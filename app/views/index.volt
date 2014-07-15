@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
-    <link href="<?php echo $this->publicUrl->get('css/bootstrap.min.css'); ?>" rel="stylesheet">
+    <link type="text/css" href="<?php echo $this->publicUrl->get('css/bootstrap.min.css'); ?>" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo $this->publicUrl->get('css/custom.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo $this->publicUrl->get('css/bootstrap-markdown.min.css') ?>">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -12,11 +12,10 @@
 	</head>
 	<body>
 		{{content()}}
-		{{javascript_include("public/js/bootstrap.min.js")}}
-		<!-- {{javascript_include("public/js/bootstrap-theme.min.js")}} -->
-		{{javascript_include("public/js/bootstrap-markdown.js")}}
-		{{javascript_include("public/js/to-markdown.js")}}
-		{{javascript_include("public/js/custom.js")}}
+		<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/bootstrap.min.js'); ?>"></script>
+		<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/bootstrap-markdown.js') ?>"></script>
+		<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/to-markdown.js'); ?>"></script>
+		<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/custom.js'); ?>"></script>
 		<?php if(isset($script)){
 			echo $script;
 			} ?>

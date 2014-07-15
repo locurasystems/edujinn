@@ -1,7 +1,7 @@
 <?php
 
     $router = new \Phalcon\Mvc\Router;
-
+    $router->removeExtraSlashes(true);
         $router->add('/{lg:[a-z]{2}}(/?)',
         array(
             "controller"=>'index',
@@ -26,7 +26,7 @@
             'param'=>4
             ));
 
-    $router->add('/signin',array(
+    $router->add('/{lg:[a-z]{2}}/signin',array(
         'controller'    =>  'Session',
         'action'        =>  'signin'
         ));
@@ -82,10 +82,17 @@
      *Default Routes for Channel
     */
 
-    $router->add('/{lg:[a-z]{2}}/channel(/?)',array(
+    $router->add('/channel(/?)',array(
+        'namespace' =>'Learn\Controllers\channel',
+        'controller'=>'Index',
+        'action'    =>'index',
+        
+        ));
+     $router->add('/channel/{lg:[a-z]{2}}(/?)',array(
         'namespace' =>'Learn\Controllers\channel',
         'controller'=>'Index',
         'action'    =>'index'
+        
         ));
     $router->add('/{lg:[a-z]{2}}/channel/:controller/:action(/?)',array(
         'namespace' =>'Learn\Controllers\channel',

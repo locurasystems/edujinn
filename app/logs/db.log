@@ -3699,3 +3699,29 @@
 [Mon, 14 Jul 14 03:25:43 -0700][DEBUG] SELECT IF(COUNT(*)>0, 1 , 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME`='course'
 [Mon, 14 Jul 14 03:25:43 -0700][DEBUG] DESCRIBE `course`
 [Mon, 14 Jul 14 03:25:43 -0700][DEBUG] SELECT `course`.`id`, `course`.`channel_id`, `course`.`title`, `course`.`code`, `course`.`about`, `course`.`description`, `course`.`createdAt`, `course`.`isActive` FROM `course` WHERE `course`.`channel_id` = '94'
+[Tue, 15 Jul 14 05:49:11 -0700][DEBUG] SELECT IF(COUNT(*)>0, 1 , 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME`='users'
+[Tue, 15 Jul 14 05:49:11 -0700][DEBUG] DESCRIBE `users`
+[Tue, 15 Jul 14 05:49:11 -0700][DEBUG] SELECT `users`.`id`, `users`.`user_group_id`, `users`.`firstName`, `users`.`lastName`, `users`.`username`, `users`.`email`, `users`.`password`, `users`.`mustChangePassword`, `users`.`banned`, `users`.`suspended`, `users`.`active` FROM `users` WHERE `users`.`email` = :0 LIMIT :2
+[Tue, 15 Jul 14 05:49:11 -0700][DEBUG] SELECT `users`.`id`, `users`.`user_group_id`, `users`.`firstName`, `users`.`lastName`, `users`.`username`, `users`.`email`, `users`.`password`, `users`.`mustChangePassword`, `users`.`banned`, `users`.`suspended`, `users`.`active` FROM `users` WHERE `users`.`username` = :0 LIMIT :2
+[Tue, 15 Jul 14 05:49:11 -0700][DEBUG] SELECT IF(COUNT(*)>0, 1 , 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME`='success_logins'
+[Tue, 15 Jul 14 05:49:11 -0700][DEBUG] DESCRIBE `success_logins`
+[Tue, 15 Jul 14 05:49:12 -0700][DEBUG] INSERT INTO `success_logins` (`usersId`, `ipAddress`, `userAgent`) VALUES (?, ?, ?)
+[Tue, 15 Jul 14 05:49:12 -0700][DEBUG] SELECT IF(COUNT(*)>0, 1 , 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME`='user_group'
+[Tue, 15 Jul 14 05:49:12 -0700][DEBUG] DESCRIBE `user_group`
+[Tue, 15 Jul 14 05:49:12 -0700][DEBUG] SELECT `user_group`.`id`, `user_group`.`name`, `user_group`.`isActive` FROM `user_group` WHERE `user_group`.`id` = :0 LIMIT :2
+[Tue, 15 Jul 14 06:06:37 -0700][DEBUG] SELECT IF(COUNT(*)>0, 1 , 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME`='channel'
+[Tue, 15 Jul 14 06:06:37 -0700][DEBUG] DESCRIBE `channel`
+[Tue, 15 Jul 14 06:06:37 -0700][DEBUG] SELECT `channel`.`id`, `channel`.`user_id`, `channel`.`channel_name`, `channel`.`createdAt`, `channel`.`modifiedAt` FROM `channel` WHERE `channel`.`user_id` = '94' LIMIT :1
+[Tue, 15 Jul 14 06:06:37 -0700][DEBUG] SELECT IF(COUNT(*)>0, 1 , 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME`='channel_user'
+[Tue, 15 Jul 14 06:06:37 -0700][DEBUG] DESCRIBE `channel_user`
+[Tue, 15 Jul 14 06:06:37 -0700][DEBUG] SELECT `channel_user`.`id`, `channel_user`.`channel_id`, `channel_user`.`user_id`, `channel_user`.`createdAt`, `channel_user`.`modifiedAt` FROM `channel_user` WHERE `channel_user`.`channel_id` = '57'
+[Tue, 15 Jul 14 06:26:42 -0700][DEBUG] SELECT `channel`.`id`, `channel`.`user_id`, `channel`.`channel_name`, `channel`.`createdAt`, `channel`.`modifiedAt` FROM `channel` WHERE `channel`.`user_id` = '94' LIMIT :1
+[Tue, 15 Jul 14 06:26:42 -0700][DEBUG] SELECT `channel_user`.`id`, `channel_user`.`channel_id`, `channel_user`.`user_id`, `channel_user`.`createdAt`, `channel_user`.`modifiedAt` FROM `channel_user` WHERE `channel_user`.`channel_id` = '57'
+[Tue, 15 Jul 14 06:34:12 -0700][DEBUG] SELECT `channel`.`id`, `channel`.`user_id`, `channel`.`channel_name`, `channel`.`createdAt`, `channel`.`modifiedAt` FROM `channel` WHERE `channel`.`user_id` = '94' LIMIT :1
+[Tue, 15 Jul 14 06:34:12 -0700][DEBUG] SELECT `channel_user`.`id`, `channel_user`.`channel_id`, `channel_user`.`user_id`, `channel_user`.`createdAt`, `channel_user`.`modifiedAt` FROM `channel_user` WHERE `channel_user`.`channel_id` = '57'
+[Tue, 15 Jul 14 06:37:36 -0700][DEBUG] SELECT `channel`.`id`, `channel`.`user_id`, `channel`.`channel_name`, `channel`.`createdAt`, `channel`.`modifiedAt` FROM `channel` WHERE `channel`.`user_id` = '94' LIMIT :1
+[Tue, 15 Jul 14 06:37:36 -0700][DEBUG] SELECT `channel_user`.`id`, `channel_user`.`channel_id`, `channel_user`.`user_id`, `channel_user`.`createdAt`, `channel_user`.`modifiedAt` FROM `channel_user` WHERE `channel_user`.`channel_id` = '57'
+[Tue, 15 Jul 14 06:24:33 -0700][DEBUG] SELECT `users`.`id`, `users`.`user_group_id`, `users`.`firstName`, `users`.`lastName`, `users`.`username`, `users`.`email`, `users`.`password`, `users`.`mustChangePassword`, `users`.`banned`, `users`.`suspended`, `users`.`active` FROM `users` WHERE `users`.`email` = :0 LIMIT :2
+[Tue, 15 Jul 14 06:24:33 -0700][DEBUG] SELECT `users`.`id`, `users`.`user_group_id`, `users`.`firstName`, `users`.`lastName`, `users`.`username`, `users`.`email`, `users`.`password`, `users`.`mustChangePassword`, `users`.`banned`, `users`.`suspended`, `users`.`active` FROM `users` WHERE `users`.`username` = :0 LIMIT :2
+[Tue, 15 Jul 14 06:24:34 -0700][DEBUG] INSERT INTO `success_logins` (`usersId`, `ipAddress`, `userAgent`) VALUES (?, ?, ?)
+[Tue, 15 Jul 14 06:24:34 -0700][DEBUG] SELECT `user_group`.`id`, `user_group`.`name`, `user_group`.`isActive` FROM `user_group` WHERE `user_group`.`id` = :0 LIMIT :2

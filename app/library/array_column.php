@@ -6,7 +6,7 @@
  * Time: 11:48 PM
  */
 
-namespace Unic;
+namespace Learn;
 
 if (!function_exists('array_column')) {
 

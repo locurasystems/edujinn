@@ -10,6 +10,7 @@ class StudentController extends ControllerBase
 	public function initialize()
 	{
 		$this->view->setLayout('index');
+		parent::initialize();
 	}
 	public function createAction()
 	{

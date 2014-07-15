@@ -15,7 +15,10 @@ use Learn\Auth\Auth,
     Phalcon\Db\Adapter\Pdo\Mysql as Connection,
     Phalcon\Events\Manager as EventManager,
     Learn\Acl\Acl,
+    Learn\Languages\Language,
+    Learn\Message\Message,
     Learn\Mail\Mail;
+
 /**
  * The FactoryDefault Dependency Injector automatically register the right services providing a full stack framework
  */
@@ -35,6 +38,16 @@ $di->set('publicUrl',function() use ($config){
     $pUrl->setBaseUri($config->application->publicUrl);
     return $pUrl;
 },true);
+
+/**
+* Language selection
+*/
+$di->set('lang',function() {
+
+    $lang= new Language();
+    return $lang;
+
+});
 
 /**
  * Setting up the view component
@@ -60,7 +73,7 @@ $di->set('view', function () use ($config) {
             });
             return $volt;
         },
-        '.phtml' => 'Phalcon\Mvc\View\Engine\Php'
+        '.phtml' => 'Phalcon\Mvc\View\Engine\Volt'
     ));
 
     return $view;

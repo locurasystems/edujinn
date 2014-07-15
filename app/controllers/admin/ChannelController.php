@@ -5,7 +5,7 @@ use Learn\Models\ChannelPage;
 use Learn\Models\Channel,
 	Learn\Models\Users;
 
-class ChannelController extends ControllerAdmin
+class ChannelController extends ControllerBase
 {
 	public function initialize()
 	{

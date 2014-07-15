@@ -1,7 +1,7 @@
 <?php 
 namespace Learn\Controllers\admin;
 use Learn\Models\ChannelPage;
-class PageController extends ControllerAdmin
+class PageController extends ControllerBase
 {
 
 	public function initialize()

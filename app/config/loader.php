@@ -13,16 +13,18 @@ $loader = new \Phalcon\Loader();
 // );
 
 $loader->registerNamespaces(array(
-    'Learn\Models'           => $config->application->modelsDir,
-    'Learn\Controllers'      => $config->application->controllersDir,
-    'Learn'                  => $config->application->libraryDir,
-    'Aws'                   =>$config->application->libraryDir.'Aws',
-    'Guzzle'                =>$config->application->libraryDir.'Guzzle',
-    'Symfony'               =>$config->application->libraryDir.'symfony',
-    'PHPVideoToolkit'       =>$config->application->libraryDir.'PHPVideoToolkit',
-    'Database'              =>$config->application->libraryDir.'Database',
-    'facebook'              =>$config->application->libraryDir.'facebook',
-    'Google'                =>$config->application->libraryDir.'Google',
+    'Learn\Models'      =>  $config->application->modelsDir,
+    'Learn\Controllers' =>  $config->application->controllersDir,
+    'Learn\Languages'   =>  $config->application->languagesDir,
+    'Learn'             =>  $config->application->libraryDir,
+    'Aws'               =>  $config->application->libraryDir.'Aws',
+    'Guzzle'            =>  $config->application->libraryDir.'Guzzle',
+    'Symfony'           =>  $config->application->libraryDir.'symfony',
+    'PHPVideoToolkit'   =>  $config->application->libraryDir.'PHPVideoToolkit',
+    'Database'          =>  $config->application->libraryDir.'Database',
+    'facebook'          =>  $config->application->libraryDir.'facebook',
+    'Google'            =>  $config->application->libraryDir.'Google',
+    'Message'           =>  $config->application->libraryDir.'Message'
 
 
 ));

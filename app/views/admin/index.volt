@@ -4,26 +4,26 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
-    <link href="<?php echo $this->url->get('public/css/bootstrap.min.css') ?>" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->url->get('public/css/custom.css') ?>">
+    <link href="<?php echo $this->publicUrl->get('css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->publicUrl->get('css/custom.css') ?>">
     
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->url->get('public/css/bootstrap-markdown.min.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->publicUrl->get('css/bootstrap-markdown.min.css') ?>">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
-<?php echo $this->tag->javascriptInclude('public/js/admin/ng-app/ng-admin.js'); ?>
-<?php echo $this->tag->javascriptInclude('public/js/admin/ng-ctrl/channelCtrl.js'); ?>
-<?php echo $this->tag->javascriptInclude('public/js/ui-bootstrap.js'); ?>
+	<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/admin/ng-app/ng-admin.js') ?>"></script>
+	<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/admin/ng-app/ng-channelCtrl.js') ?>"></script>
+	<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/ui-bootstrap.js') ?>"></script>
 
 	</head>
 	<body>
 		{{content()}}
-		{{javascript_include("public/js/bootstrap.min.js")}}
-		{{javascript_include("public/js/bootstrap-markdown.js")}}
-		{{javascript_include("public/js/to-markdown.js")}}
-		{{javascript_include("public/js/custom.js")}}
+		<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/bootstrap.min.js'); ?>"></script>
+		<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/bootstrap-markdown.js') ?>"></script>
+		<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/to-markdown.js'); ?>"></script>
+		<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/custom.js'); ?>"></script>
 		 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-		 {{stylesheet_link("public/css/bootstrap-theme.min.css")}}
+		 <link rel="stylesheet" type="text/css" href="<?php echo $this->publicUrl->get('css/bootstrap-theme.min.css') ?>">
 		<?php if(isset($script)){
 			echo $script;
 			} ?>

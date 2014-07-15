@@ -1,5 +1,5 @@
 <?php
-namespace Unic;
+namespace Learn;
 
 class Functions
 {
