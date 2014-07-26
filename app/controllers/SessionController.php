@@ -10,7 +10,7 @@ class SessionController extends ControllerBase
     public function initialize()
     {
         $this->view->setLayout('public');
-        parent::initialize();
+        // parent::initialize();
     }
     public function indexAction()
     {

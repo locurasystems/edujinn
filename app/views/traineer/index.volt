@@ -12,19 +12,19 @@
   
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
 	<!-- // <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular-animate.js"></script> -->
-	<script type="text/javascript" src="<?php echo $this->publicUrl('js/channel/ng-app/ng-channel.js') ?>"></script>
-	<script type="text/javascript" src="<?php echo $this->publicUrl('js/ui-bootstrap.js') ?>"></script>
+	<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/channel/ng-app/ng-channel.js') ?>"></script>
+	<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/ui-bootstrap.js') ?>"></script>
 
 
 	</head>
 	<body>
 		{{content()}}
-		<script type="text/javascript" src="<?php echo $this->publicUrl('js/bootstrap.min.js'); ?>"></script>
-		<script type="text/javascript" src="<?php echo $this->publicUrl('js/bootstrap-markdown.js') ?>"></script>
-		<script type="text/javascript" src="<?php echo $this->publicUrl('js/to-markdown.js'); ?>"></script>
-		<script type="text/javascript" src="<?php echo $this->publicUrl('js/custom.js'); ?>"></script>
+		<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/bootstrap.min.js'); ?>"></script>
+		<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/bootstrap-markdown.js') ?>"></script>
+		<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/to-markdown.js'); ?>"></script>
+		<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/custom.js'); ?>"></script>
 		 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-		 <link rel="stylesheet" type="text/css" href="<?php echo $this->publicUrl('css/bootstrap-theme.min.css') ?>">
+		 <link rel="stylesheet" type="text/css" href="<?php echo $this->publicUrl->get('css/bootstrap-theme.min.css') ?>">
 		 <?php if(isset($script)){
 			echo $script;
 			} ?>

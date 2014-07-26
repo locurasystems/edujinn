@@ -184,5 +184,13 @@ class ChannelStudent extends \Phalcon\Mvc\Model
             'modifiedAt' => 'modifiedAt'
         );
     }
+    /**
+    * Initialize 
+    */
+    public function initialize()
+    {
+        $this->belongsTo('studentId','Learn\Models\Users','id',array(
+            'alias'=>'user'));
+    }
 
 }

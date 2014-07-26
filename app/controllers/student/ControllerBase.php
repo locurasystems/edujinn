@@ -11,7 +11,7 @@ class ControllerBase extends Controller
     {
         $this->view->setViewsDir($this->view->getViewsDir().'student/');
     }
-     public function initialize()
+     public function initialize1()
     {
         $uri_lang=$this->dispatcher->getParam('lg');
         if(!isset($uri_lang))

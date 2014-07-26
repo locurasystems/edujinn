@@ -73,7 +73,7 @@ $di->set('view', function () use ($config) {
             });
             return $volt;
         },
-        '.phtml' => 'Phalcon\Mvc\View\Engine\Volt'
+        '.phtml' => 'Phalcon\Mvc\View\Engine\php'
     ));
 
     return $view;

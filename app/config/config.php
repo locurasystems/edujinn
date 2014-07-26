@@ -22,7 +22,7 @@ return new \Phalcon\Config(array(
         'logDir'         => __DIR__ . '/../../app/logs/',
         'publicDir'      =>__DIR__.'/../../public/',
         'languageDir'    =>__DIR__.'/../../language',
-        'baseUri'        => '/edujinn/',
+        'baseUri'        => '/edujinn/en/',
         'publicUrl'      =>'/edujinn/public/',
         'cryptSalt'      => 'eEAfR|_&G&f,+vU]:jFr!!A&+71w1Ms9~8_4L!<@[N@DyaIP_2My|:+.u>/6m,$D'
     ),

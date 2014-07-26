@@ -30,6 +30,7 @@
         'controller'    =>  'Session',
         'action'        =>  'signin'
         ));
+    
 
     /* Routes for Slug */
     $router->add('/school/{slug:[a-z0-9-]+}\/?',array(
@@ -88,7 +89,7 @@
         'action'    =>'index',
         
         ));
-     $router->add('/channel/{lg:[a-z]{2}}(/?)',array(
+     $router->add('/{lg:[a-z]{2}}/channel(/?)',array(
         'namespace' =>'Learn\Controllers\channel',
         'controller'=>'Index',
         'action'    =>'index'

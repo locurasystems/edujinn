@@ -6,7 +6,7 @@ class CourseController extends ControllerBase
 {
 	public function initialize()
 	{
-		parent::initialize();
+		// parent::initialize();
 		$this->view->setLayout('index');
 	}
 	public function createAction()

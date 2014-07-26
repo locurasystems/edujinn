@@ -12,7 +12,7 @@
   
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
 	<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/admin/ng-app/ng-admin.js') ?>"></script>
-	<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/admin/ng-app/ng-channelCtrl.js') ?>"></script>
+	<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/admin/ng-ctrl/channelCtrl.js') ?>"></script>
 	<script type="text/javascript" src="<?php echo $this->publicUrl->get('js/ui-bootstrap.js') ?>"></script>
 
 	</head>

@@ -15,13 +15,7 @@ class Notification extends \Phalcon\Mvc\Model
      *
      * @var integer
      */
-    protected $form_user;
-
-    /**
-     *
-     * @var integer
-     */
-    protected $to_user;
+    protected $event_id;
 
     /**
      *
@@ -61,27 +55,14 @@ class Notification extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Method to set the value of field form_user
+     * Method to set the value of field event_id
      *
-     * @param integer $form_user
+     * @param integer $event_id
      * @return $this
      */
-    public function setFormUser($form_user)
+    public function setEventId($event_id)
     {
-        $this->form_user = $form_user;
-
-        return $this;
-    }
-
-    /**
-     * Method to set the value of field to_user
-     *
-     * @param integer $to_user
-     * @return $this
-     */
-    public function setToUser($to_user)
-    {
-        $this->to_user = $to_user;
+        $this->event_id = $event_id;
 
         return $this;
     }
@@ -149,23 +130,13 @@ class Notification extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Returns the value of field form_user
+     * Returns the value of field event_id
      *
      * @return integer
      */
-    public function getFormUser()
+    public function getEventId()
     {
-        return $this->form_user;
-    }
-
-    /**
-     * Returns the value of field to_user
-     *
-     * @return integer
-     */
-    public function getToUser()
-    {
-        return $this->to_user;
+        return $this->event_id;
     }
 
     /**
@@ -236,13 +207,19 @@ class Notification extends \Phalcon\Mvc\Model
     {
         return array(
             'id' => 'id', 
-            'form_user' => 'form_user', 
-            'to_user' => 'to_user', 
-            'type_id' => 'type_id', 
+            'event_id' => 'eventId', 
+            'type_id' => 'typeId', 
             'text' => 'text', 
             'isdisplay' => 'isdisplay', 
             'createdAt' => 'createdAt'
         );
     }
+     public function initialize()
+    {
+        $this->belongsTo('typeId','\Learn\Models\NotificationType','id',array(
+            'alias'=>'type'));
+        $this->belongsTo('eventId',"\Learn\Models\\".'$)
+    }
+
 
 }

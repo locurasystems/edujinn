@@ -10,7 +10,7 @@ class StudentController extends ControllerBase
 	public function initialize()
 	{
 		$this->view->setLayout('index');
-		parent::initialize();
+		// parent::initialize();
 	}
 	public function createAction()
 	{
@@ -74,10 +74,60 @@ class StudentController extends ControllerBase
 	}
 	public function viewAction()
 	{
-
-	}
-	public function deleteAction()
-	{
+		$userId			=	$this->auth->getID();
+		$channelId=Channel::findFirst("userId = '$userId'")->getId();
+		$total=ChannelStudent::find("channelId = '$channelId'")->count();
+		$this->view->setVar('total',$total);
+		if($this->request->isPost())
+		{
+			$currentPage      =$this->request->getPost('currentPage','int',1);
+			$perPage          =$this->request->getPost('perPage','int',3);
+			$offset           = ($currentPage ==1 ? 0: ($currentPage-1)*$perPage);
+			$user 			  =	ChannelStudent::find(array(
+									"channelId = '$channelId'",
+									'limit'=>array(
+									'number'=>$perPage,
+									'offset'=>$offset
+									)
+									));
+			if($user)
+			{
+				$arrs=array();
+				foreach ($user as $value) {
+					$arr['user']=$value->user->toArray();
+					$arr['student']=$value->toArray();
+					array_push($arrs, $arr);
+				}
+				echo json_encode($arrs);
+				$this->view->disable();
+				return;
+			}
+			
+		}
 		
+	}
+	public function deleteAction($id)
+	{
+		$this->db->begin();
+		$channelStudent=ChannelStudent::findFirst($id);
+		if(!$channelStudent)
+		{
+			$this->flash->error("User was not found");
+			return $this->response->redirect($_SERVER['HTTP_REFERER']);
+		}
+		$user=Users::findFirst($channelStudent->userId);
+		if (!$user && !$user->delete()) {
+			$this->db->rollback();
+            $this->flash->error($user->getMessages());
+        } else {
+        	if(!$channelStudent->delete())
+        	{
+        		$this->db->rollback();
+          		$this->flash->error($user->getMessages());
+        	}
+            $this->flash->success("User was deleted");
+            $this->db->commit();
+        }
+        return $this->response->redirect($_SERVER['HTTP_REFERER']);
 	}
 }

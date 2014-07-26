@@ -1,6 +1,6 @@
 'use strict';
 
-var baseURL='http://localhost/edujinn/admin/';
+var baseURL='http://localhost/edujinn/en/admin/';
 // Declare app level module which depends on filters, and services
 var adminApp=angular.module('admin',['ui.bootstrap']);
 

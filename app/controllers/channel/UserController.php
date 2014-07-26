@@ -12,7 +12,7 @@ class UserController extends ControllerBase
 	public function initialize()
 	{
 		$this->view->setLayout('index');
-		parent::initialize();
+		// parent::initialize();
 	}
 	public function createAction()
 	{
@@ -121,7 +121,7 @@ class UserController extends ControllerBase
 			return $this->response->redirect($_SERVER['HTTP_REFERER']);
 		}
 		$user=Users::findFirst($channelUser->userId);
-		if (!user && !$user->delete()) {
+		if (!$user && !$user->delete()) {
 			$this->db->rollback();
             $this->flash->error($user->getMessages());
         } else {

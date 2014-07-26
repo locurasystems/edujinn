@@ -3,6 +3,7 @@ namespace Learn\Controllers;
 
 use Phalcon\Mvc\Controller;
 use Phalcon\Mvc\View;
+use Learn\Message\Message;
 class IndexController extends ControllerBase
 {
 	
@@ -68,6 +69,13 @@ foreach ($indicesServer as $arg) {
     }
 }
 echo '</table>' ;
+		$this->view->disable();
+	}
+	public function test2Action()
+	{
+		$msg=new Message();
+		$send=$msg->send(22,'2,1','subject','message');
+		echo $send;
 		$this->view->disable();
 	}
 }
